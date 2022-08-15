@@ -1,12 +1,12 @@
 import { Router } from "express";
-import TourController from "../controllers/tourControllers";
+import coursesController from "../controllers/coursesControllers";
 import UserController from "../controllers/userControllers";
-import BookingController from "../controllers/bookingController";
+import enrroledController from "../controllers/enrroledController";
 import Validator from "../middlewares/validator";
 import DataChecker from "../middlewares/datacheker";
 import user from "../models/user";
 import verifyAccess from "../middlewares/verifyAccess";
-import verifyToken from "../middlewares/verifyAccess"
+import verifyToken from "../middlewares/verifyToken"
 const route = Router();
 
 route.post("/user/login",
@@ -20,16 +20,16 @@ route.delete("/user/:id", UserController.deleteUser);
 route.put("/user/:id", UserController.updateUser);
 
 route.post(
-  "/tour/create",
+  "/coursesr/create",
  
 );
-route.get("/tour/create",verifyToken,verifyAccess("Admin"), TourController.registerTour);
-route.get("/tour/:id", TourController.updateTour);
-route.get("/tour/:id", TourController.getOneTour);
-route.post("/booking/create", BookingController.createBooking);
-route.get("/booking", BookingController.getAll);
-route.get("/booking/:id", BookingController.getOneById);
-route.put("/booking/:id", BookingController.upadateBooking);
+route.get("/courses/create",verifyToken,verifyAccess("Admin"), coursesController.registerCourses);
+route.get("/courses/:id", coursesController.updateCourses);
+route.get("/courses/:id", coursesController.getOneCourse);
+route.post("/enrroled/create", enrroledController.createenrrolement);
+route.get("/enrroled", enrroledController.getAll);
+route.get("/enrroled/:id",enrroledController.getOneById);
+route.put("/enrroled/:id", enrroledController.upadateenrrolement);
 
 
 // route.get("/create",UserController.getAll)
