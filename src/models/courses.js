@@ -8,7 +8,7 @@ const coursesSchema = new mongoose.Schema(
     },
     description: String,
     price: String,
-    phone: String,
+    // phone: String,
     picture: String,
     rate: Number,
 
@@ -25,7 +25,7 @@ const coursesSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-coursesSchema.pre(/^find/, function (next) {
+coursesSchema.pre(/^find/, function(next) {
   this.populate({ 
     path:"createdBy",
     select:"email phone names picture"
@@ -33,6 +33,6 @@ coursesSchema.pre(/^find/, function (next) {
   next();
 });
 
-const Courses = mongoose.model("Courses", coursesSchema);
+const Courses = mongoose.model("Course", coursesSchema);
 
-export default coursesSchema;
+export default Courses;

@@ -3,24 +3,24 @@ import CoursesModel from "../models/courses";
 class CoursesServiceS {
   //registering courses
   static async registerCourses(req) {
-    const Courses = await CoursesModel.create(req.body);
-    return Courses;
+    const courses = await CoursesModel.create(req.body);
+    return courses;
   }
   //get all
-  static async getAll() {
-    const Courses = await CoursesModel.find();
-    return Courses;
+  static async getAllCourses() {
+    const courses = await CoursesModel.find();
+    return courses;
   }
-  //updateCourses
+  //update courses
   static async updateCourses(req) {
     await CoursesModel.findOneAndUpdate({ _id: req.params.id }, req.body);
-    const Courses = CoursesModel.findOne({ _id: req.params.id });
-    return Courses;
+    const courses = CoursesModel.findOne({ _id: req.params.id });
+    return courses;
   }
   //static getone
   static async getOneCourses(req) {
-    const Courses = await CoursesModel.findById({ _id: req.params.id }, req.body);
-    return Courses;
+    const courses = await CoursesModel.findById({ _id: req.params.id }, req.body);
+    return courses;
   }
 }
 

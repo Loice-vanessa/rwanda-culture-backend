@@ -3,10 +3,12 @@ import "dotenv/config";
 import  bodyParser from 'body-parser';
 
 import mongoose from 'mongoose';
-import config from '@babel/core/lib/config';
+// import config from '@babel/core/lib/config';
+
+import route from "./routes/index";
 const app = express();
 app.use(bodyParser.json());
-
+app.use("/",route);
 
 //database configuration
 const database =process.env.DATABASE;

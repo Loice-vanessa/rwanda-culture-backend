@@ -1,17 +1,17 @@
-import enrroledServices from "../services/enrroledService";
+import EnrroledServices from "../services/EnrroledServices";
 import Response from "../utils/response";
 
 class EnrroledController{
 
-    // Create enrolement Controller
+    // Create Enrroled Controller
     static async createEnrroled(req,res){
-        const Enrroled = await enrroledServices.createEnrroled(req);
+        const Enrroled = await EnrroledServices.createEnrroled(req);
         if(!Enrroled){
             return Response.errorMessage(res, "Failed Created" , 400)
         }
         return Response.successMessage(
             res,
-            "Enrolement Successful Created",
+            "Enrroled Successful Created",
             Enrroled,
             200
         );
@@ -21,29 +21,29 @@ class EnrroledController{
     //get all enrroled controller
 
     static async getAll(req,res){
-        const Enrroled = await enrroledServices.getAll(req);
+        const Enrroled = await EnrroledServices.getAll(req);
         if(!Enrroled){
             return Response.errorMessage(res, "Not found" , 400)
         }
         return Response.successMessage(
             res,
-            "Enrolement Successful to retrieve",
+            "Enrroled Successful to retrieve",
             Enrroled,
             200
         );
     }
     
-    //update enrroled controller
+    //update Enrroled controller
    
     
     static async upadateEnrroled(req,res){
-        const Enrroled = await enrroledServices.upadateEnrroled(req);
+        const Enrroled = await EnrroledServices.upadateEnrroled(req);
         if(!Enrroled){
             return Response.errorMessage(res, "Failed Created" , 400)
         }
         return Response.successMessage(
             res,
-            "Enrolement Successful Created",
+            "Enrroled Successful Created",
             Enrroled,
             200
         );
@@ -52,13 +52,13 @@ class EnrroledController{
     // get one by id 
 
     static async getOneById(req,res){
-        const enrroled = await enrroledServices.getOneById(req);
+        const Enrroled = await EnrroledServices.getOneById(req);
         if(!Enrroled){
             return Response.errorMessage(res, "Not found" , 400)
         }
         return Response.successMessage(
             res,
-            "Enrolement Successful to retrieve",
+            "Enrroled Successful to retrieve",
             Enrroled,
             200
         );
