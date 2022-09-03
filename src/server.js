@@ -6,7 +6,9 @@ import mongoose from 'mongoose';
 // import config from '@babel/core/lib/config';
 
 import route from "./routes/index";
+import cors from "cors";
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/",route);
 

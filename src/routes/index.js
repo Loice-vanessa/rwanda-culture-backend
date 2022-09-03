@@ -7,7 +7,8 @@ import EnrroledController from "../controllers/enrroledControllers";
 // import user from "../models/user";
 // import user from "../models/user"
 import verifyAccess from "../middlewares/verifyAccess";
-import verifyToken from "../middlewares/verifyToken"
+import verifyToken from "../middlewares/verifyToken";
+// import GetAllCourses from "../models/courses"
 const route = Router();
 
  route.post("/user/login",UserController.loginUserController);
@@ -21,7 +22,7 @@ route.delete("/user/:id", UserController.deleteUser);
 route.post("/courses/create",verifyToken,verifyAccess("Admin"), CoursesController.registerCourses);
 route.get("/courses/:id", CoursesController.updateCourses);
 route.get("/courses/:id", CoursesController.getOneCourse);
-route.get("/courses/all", CoursesController.getAllCourses);
+route.get("/courses", CoursesController.getAllCourses);
 // route.post("/enrroled/create", EnrroledController.createenrrolement);
 route.get("/enrroled", EnrroledController.getAll);
 route.get("/enrroled/:id",EnrroledController.getOneById);

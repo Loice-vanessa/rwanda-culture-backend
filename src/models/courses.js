@@ -20,7 +20,7 @@ const coursesSchema = new mongoose.Schema(
     },
     createdBy: {
       type: mongoose.Schema.ObjectId,
-      ref: "User",
+      ref: "user",
     },
   },
   { timestamps: true }
