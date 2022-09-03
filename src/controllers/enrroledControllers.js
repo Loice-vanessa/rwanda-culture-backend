@@ -1,4 +1,4 @@
-import EnrroledServices from "../services/EnrroledServices";
+import EnrroledServices from "../services/enrroledServices";
 import Response from "../utils/response";
 
 class EnrroledController{

@@ -1,6 +1,6 @@
-import UserServices from "../services/UserServices";
+import UserServices from "../services/userServices";
 import handlePasswords from "../utils/handlepassword";
-import TokenAuth from "../utils/Token";
+import TokenAuth from "../utils/token";
 class UserController {
   //loginuser controllers
   static async loginUserController(req, res) {

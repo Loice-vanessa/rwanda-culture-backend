@@ -1,4 +1,4 @@
-import TokenAuth from "../utils/Token"
+import TokenAuth from "../utils/token"
 
 const verifyToken =  (req, res, next) => {
     const token = req.header("x-auth-token");
